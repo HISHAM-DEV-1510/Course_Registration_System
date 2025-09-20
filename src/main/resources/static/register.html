@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register a Course</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: url("https://images.unsplash.com/photo-1519389950473-47ba0277781c") no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    /* Overlay for better text visibility */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5); /* dark overlay */
+      z-index: 0;
+    }
+
+    .form-container {
+      position: relative;
+      z-index: 1;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+      width: 400px;
+      text-align: center;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #222;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #444;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    input:focus, select:focus {
+      border-color: #2575fc;
+      outline: none;
+      box-shadow: 0 0 5px rgba(37, 117, 252, 0.5);
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #2575fc;
+      color: white;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #1b5edb;
+      transform: scale(1.05);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <div class="form-container">
+    <h1>Kickstart Your Career 🚀</h1>
+
+    <form action="/courses/register" method="post">
+      <label for="name">Enter Your Name:</label>
+      <input type="text" name="name" required>
+
+      <label for="emailId">Enter Your Email Id:</label>
+      <input type="email" name="emailId" required>
+
+      <label for="courseName">Select the Course</label>
+      <select id="courseName" name="courseName" required>
+        <option value="">-- Choose a Course --</option>
+        <option value="Java">Java</option>
+        <option value="Python">Python</option>
+        <option value="MySQL">MySQL</option>
+        <option value="Spring Boot">Spring Boot</option>
+        <option value="JavaScript">JavaScript</option>
+        <option value="HTML & CSS">HTML & CSS</option>
+        <option value="C & C++">C & C++</option>
+        <option value="FullStack Development">FullStack Development</option>
+        <option value="AI">AI</option>
+      </select>
+
+      <button type="submit">Register Now</button>
+    </form>
+  </div>
+</body>
+</html>

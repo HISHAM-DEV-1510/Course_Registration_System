@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>Enrolled Students</title>
+        <script type="text/javascript" src="js/myscript.js"></script>
+        <style>
+            body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            margin: 0;
+            padding: 40px;
+            background: linear-gradient(135deg, #fff9c4, #ffe082, #ffca28);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 70%;
+            background: #fffbea;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        th {
+            background: linear-gradient(to right, #ffd54f, #ffb300);
+            color: #333;
+            font-size: 18px;
+            padding: 12px;
+        }
+
+        td {
+            padding: 12px;
+            font-size: 16px;
+            border-bottom: 1px solid #f0e68c;
+        }
+
+        tr:nth-child(even) {
+            background-color: #fffde7;
+        }
+
+        tr:hover {
+            background-color: #fff59d;
+            transition: 0.3s;
+        }
+        </style>
+    </head>
+    <body>
+        <table align="center" border="1">
+            <tr align="center" style="background-color: lightblue;">
+                <th>Name</th>
+                <th>Email Id</th>
+                <th>Course Name</th>
+                
+            </tr>
+            <tbody align="center" id="tableEnrolled"> </tbody>   <!-- table body where rows will be inserted-->
+        </table>
+
+        <script>
+            window.onload = function(){
+                showenrolled();
+            };
+        </script>
+    </body>
+</html>

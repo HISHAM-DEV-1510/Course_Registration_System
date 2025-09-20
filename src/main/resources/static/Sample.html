@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Course Registration System</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 50px;
+      text-align: center;
+
+      /* Background image */
+      background: url("https://images.unsplash.com/photo-1503676260728-1c00da094a0b") no-repeat center center/cover;
+      position: relative;
+      height: 100vh;
+    }
+
+    /* Overlay for readability */
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5); /* dark overlay */
+      z-index: 0;
+    }
+
+    h1 {
+      color: #fff;
+      margin-bottom: 60px;
+      background: linear-gradient(135deg, #ffb347, #ffcc33); 
+      position: relative;
+      z-index: 1;
+
+    }
+
+    h2 {
+      margin-bottom: 60px;
+      color: #fff;
+      position: relative;
+      z-index: 1;
+    }
+
+  
+  .btn1, .btn2, .btn3 {
+    display: inline-block;
+    width: 300px;
+    height: 300px;
+    margin: 20px;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 16px;
+    cursor: pointer;
+
+    /* Gradient button style */
+    background: linear-gradient(135deg, #ffb347, #ffcc33); 
+    color: #222;
+    transition: 0.3s;
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.3);
+    position: relative;
+    z-index: 1;
+  }
+
+  .btn1:hover, .btn2:hover, .btn3:hover {
+    background: linear-gradient(135deg, #ffaa00, #ffdd44);
+    transform: translateY(-5px);
+    box-shadow: 0px 10px 20px rgba(0,0,0,0.4);
+  }
+
+  .btn4 {
+    display: block;
+    width: 250px;
+    margin: 15px auto;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+
+    /* Different gradient for smaller button */
+    background: linear-gradient(135deg, #56ab2f, #a8e063);
+    color: #fff;
+    transition: 0.3s;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0px 6px 15px rgba(0,0,0,0.3);
+  }
+
+  .btn4:hover {
+    background: linear-gradient(135deg, #4CAF50, #c1f07c);
+    transform: translateY(-3px);
+    box-shadow: 0px 8px 18px rgba(0,0,0,0.4);
+  }
+
+    
+    /* Settings (hamburger menu) */
+    .settings {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 2;
+    }
+
+    .settings button {
+      background: none;
+      border: none;
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
+    }
+
+    /* Dropdown menu */
+    .dropdown {
+      display: none;
+      position: absolute;
+      left: 0;
+      margin-top: 10px;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+      min-width: 150px;
+      text-align: left;
+      z-index: 10;
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 10px;
+      color: #333;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .dropdown a:hover {
+      background: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <h1>Home</h1>
+  <h2>Course Registration System</h2>
+
+  <!-- Settings button with dropdown -->
+  <div class="settings">
+    <button onclick="toggleMenu()">☰</button>
+    <div class="dropdown" id="settingsMenu">
+      <a href="#" onclick="goHome()">🏠 Home</a>
+      <a href="#" onclick="goAboutUs()"> ℹ️ About Us</a>
+    </div>
+  </div>
+  
+  <a href="register.html"><button class="btn1">Register a Course</button></a>
+  <a href="availcourses.html"><button class="btn2">Course Availability</button></a>
+  <a href="enrolled.html"><button class="btn3">Enrolled Students</button></a>
+  <button class="btn4" onclick="courseDetails()">Accessibility of Course</button>
+
+  <script>
+
+    function courseDetails() {
+      alert("After successful enrollment, course details and materials will be sent to your registered email ID.");
+    }
+
+    function toggleMenu() {
+      const menu = document.getElementById("settingsMenu");
+      menu.style.display = (menu.style.display === "block") ? "none" : "block";
+    }
+
+    function goHome() {
+      location.href = "Sample.html";
+    }
+
+    function goAboutUs() {
+      location.href = "aboutUs.html";
+    }
+
+    window.onclick = function(event) {
+      if (!event.target.matches('.settings button')) {
+        document.getElementById("settingsMenu").style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
